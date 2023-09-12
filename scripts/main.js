@@ -1,11 +1,26 @@
 function isiOS() {
   return /iPhone|iPad|iPod/i.test(navigator.userAgent);
 }
+function isLinux() {
+  return /Linux/i.test(navigator.userAgent);
+}
+
+if (isLinux()) {
+  const linuxPopup = document.getElementById('linux-popup');
+  const closePopup = document.getElementById('close-popup');
+
+  linuxPopup.style.display = 'block';
+
+  closePopup.addEventListener('click', function() {
+    linuxPopup.style.display = 'none';
+  });
+}
 
 if (isiOS()) {
  
   video.setAttribute('controls', 'controls'); // Add controls for user interaction
   const playButton = document.createElement('button');
+  video.removeAttribute('autoplay'); // Remove autoplay attribute
   playButton.textContent = 'Play Video';
   playButton.addEventListener('click', function() {
     video.play(); // Play the video when the button is clicked
