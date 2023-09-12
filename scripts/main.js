@@ -3,7 +3,7 @@ function isiOS() {
 }
 
 if (isiOS()) {
-  video.removeAttribute('autoplay'); // Remove autoplay attribute
+ 
   video.setAttribute('controls', 'controls'); // Add controls for user interaction
   const playButton = document.createElement('button');
   playButton.textContent = 'Play Video';
