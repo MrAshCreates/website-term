@@ -1,3 +1,18 @@
+function isiOS() {
+  return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+}
+
+if (isiOS()) {
+  video.removeAttribute('autoplay'); // Remove autoplay attribute
+  video.setAttribute('controls', 'controls'); // Add controls for user interaction
+  const playButton = document.createElement('button');
+  playButton.textContent = 'Play Video';
+  playButton.addEventListener('click', function() {
+    video.play(); // Play the video when the button is clicked
+    playButton.style.display = 'none'; // Hide the play button
+  });
+  video.parentNode.insertBefore(playButton, video);
+}
 const video = document.getElementById("background-video");
   video.playbackRate = 0.3;
 
