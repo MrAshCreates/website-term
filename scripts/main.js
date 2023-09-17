@@ -1,20 +1,6 @@
 function isiOS() {
   return /iPhone|iPad|iPod/i.test(navigator.userAgent);
 }
-function isLinux() {
-  return /Linux/i.test(navigator.userAgent);
-}
-
-if (isLinux()) {
-  const linuxPopup = document.getElementById('linux-popup');
-  const closePopup = document.getElementById('close-popup');
-
-  linuxPopup.style.display = 'block';
-
-  closePopup.addEventListener('click', function() {
-    linuxPopup.style.display = 'none';
-  });
-}
 
 if (isiOS()) {
  
