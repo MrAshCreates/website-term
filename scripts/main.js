@@ -49,6 +49,7 @@ async function open_terminal(){
   createCode("social", "access the developer's social media profiles");
   createCode("contact", "get in touch with the developer");
   createCode("clear", "clean the terminal");
+  createCode("blog", "takes you to my blog site");
 
   await delay(500);
   new_line();
@@ -88,11 +89,17 @@ async function getInputValue(){
     createCode("social", "access the developer's social media profiles");
     createCode("contact", "get in touch with the developer (email form)");
     createCode("clear", "clean the terminal");
+    createCode("blog", "takes you to my blog site");
+
     
   }
   else if(value === "git link"){
     trueValue(value);
     createText("<a href='https://github.com/MrAshCreates' target='_blank'><i class='fab fa-github white'></i> github.com/MrAshCreates</a>")
+  }
+  else if(value === "blog"){
+    trueValue(value);
+    createText("<a href='https://blog.mrashcreates.xyz' target='_blank'><i class='fab fa-github white'></i> Taking you to my blog :)</a>")
   }
   else if(value === "whoami"){
     trueValue(value);
