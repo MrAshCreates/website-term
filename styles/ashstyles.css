@@ -29,6 +29,9 @@ body {
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px; /* Adjust the max-width for your preference */
+    width: 90%; /* Adjust the width for your preference */
+    margin: 20px; /* Adjust the margin for spacing from the screen edges */
 }
 
 #profile-pic {
@@ -75,5 +78,11 @@ body {
     }
     100% {
         background-position: 0% 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    .profile-card {
+        width: 90%;
     }
 }
