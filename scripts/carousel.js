@@ -1,20 +1,20 @@
-const profilesCarousel = document.getElementById('profilesCarousel');
+const profilesGrid = document.getElementById('profilesGrid');
 let currentIndex = 0;
 
 function showProfile(index) {
     const profiles = document.querySelectorAll('.profile-item');
     profiles.forEach((profile, i) => {
-        profile.style.transform = `translateX(${(i - index) * 100}%)`;
+        profile.style.display = i === index ? 'block' : 'none';
     });
 }
 
 function nextProfile() {
-    currentIndex = (currentIndex + 1) % profilesCarousel.children.length;
+    currentIndex = (currentIndex + 1) % profilesGrid.children.length;
     showProfile(currentIndex);
 }
 
 function prevProfile() {
-    currentIndex = (currentIndex - 1 + profilesCarousel.children.length) % profilesCarousel.children.length;
+    currentIndex = (currentIndex - 1 + profilesGrid.children.length) % profilesGrid.children.length;
     showProfile(currentIndex);
 }
 
