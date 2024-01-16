@@ -12,7 +12,7 @@
         <h1 class="profiles-title">Fry Ends</h1>
         <div class="arrow arrow-left" onclick="moveSlider('left')">&lt;</div>
         <div class="profiles-slider">
-            <div class="profile-item">
+            <div class="profile-item active">
                 <img src="https://github.com/mrashcreates.png" alt="Asher" class="profile-thumbnail">
                 <p class="profile-name">Asher Winstead</p>
             </div>
@@ -35,7 +35,8 @@
 
         function moveSlider(direction) {
             const slider = document.querySelector('.profiles-slider');
-            const profileItemWidth = document.querySelector('.profile-item').offsetWidth + 40; // Consider margin
+            const profileItems = document.querySelectorAll('.profile-item');
+            const profileItemWidth = profileItems[0].offsetWidth + 40; // Consider margin
 
             if (direction === 'left') {
                 currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
@@ -43,8 +44,8 @@
                 currentSlide = (currentSlide + 1) % totalSlides;
             }
 
+            profileItems.forEach(item => item.classList.remove('active'));
+            profileItems[currentSlide].classList.add('active');
+
             slider.style.transform = `translateX(-${currentSlide * profileItemWidth}px)`;
         }
-    </script>
-</body>
-</html>
