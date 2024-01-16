@@ -92,7 +92,7 @@ body {
 /* Media query for mobile devices */
 @media (max-width: 600px) {
     .profiles-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(5, minmax(60px, 1fr)); /* Adjusted to a 2 / 10 grid for mobile */
         max-height: none; /* Remove max-height on mobile */
     }
 }
