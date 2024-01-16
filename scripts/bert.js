@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bertstyle.css">
+    <link rel="stylesheet" href="./bertstyle.css">
     <title>User Profile</title>
 </head>
 <body>
@@ -16,6 +16,6 @@
             <img src="instagram-logo.png" alt="Instagram Logo" class="instagram-logo">
         </a>
     </div>
-    <script src="bertscript.js"></script>
+    <script src="./bertscript.js"></script>
 </body>
 </html>
