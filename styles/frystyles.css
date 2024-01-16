@@ -58,27 +58,34 @@ body {
     color: inherit;
 }
 
+.title {
+    font-size: 100px; /* Increased font size */
+    font-weight: bold;
+    color: black;
+    margin-bottom: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+}
 .background {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, pink, white, black);
-    background-size: 200% 200%;
-    animation: gradientAnimation 10s ease infinite;
+    background: linear-gradient(45deg, pink, white, black, white, pink); /* Adjust the gradient stops for a smoother swirl */
+    background-size: 600% 600%; /* Increase the size for a more gradual swirl */
+    animation: gradientAnimation 10s linear infinite;
     z-index: -1;
     filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
 }
 
 @keyframes gradientAnimation {
     0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
+        background-position: 0% 0%;
     }
     100% {
-        background-position: 0% 50%;
+        background-position: 100% 100%;
     }
 }
