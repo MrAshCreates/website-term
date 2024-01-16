@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/bertstyles.css">
-    <title>User Profile</title>
+    <script defer src="../scripts/bert.js"></script>
+    <title>Mobile Profile Page</title>
 </head>
 <body>
     <div class="profile-container">
-        <img src="../Img/bert.jpg" alt="Profile Picture" class="profile-picture">
-        <h1 class="name">Bert</h1>
-        <p class="description"> My names bert um my friends call me the hello kitty king and uh i suck at skating. <3</p>
-        <div class="background"></div>
-        <a href="https://www.instagram.com/gtxalbert?igsh=c2kzeTAwN3g2OXg0" target="_blank">
-            <img src="../Img/instagram-logo.png" alt="Instagram Logo" class="instagram-logo">
-        </a>
+        <img id="profile-pic" src="../Img/bert.jpg" alt="Profile Picture">
+        <h2 id="name">Bert</h2>
+        <p id="description"> My names Bert um my friends call me the hello kitty king and uh i suck at skating. </p>
+        <div id="instagram-link" onclick="openInstagram()"> 
+            <img src="../Img/instagram-logo.png" alt="Instagram Logo">
+            <span>Instagram</span>
+        </div>
     </div>
-    <script src="../scripts/bertscript.js"></script>
 </body>
 </html>
