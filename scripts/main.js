@@ -1,21 +1,3 @@
-function isiOS() {
-  return /iPhone|iPad|iPod/i.test(navigator.userAgent);
-}
-
-if (isiOS()) {
- 
-  video.setAttribute('controls', 'controls'); // Add controls for user interaction
-  const playButton = document.createElement('button');
-  video.removeAttribute('autoplay'); // Remove autoplay attribute
-  playButton.textContent = 'Play Video';
-  playButton.addEventListener('click', function() {
-    video.play(); // Play the video when the button is clicked
-    playButton.style.display = 'none'; // Hide the play button
-  });
-  video.parentNode.insertBefore(playButton, video);
-}
-const video = document.getElementById("background-video");
-  video.playbackRate = 0.3;
 
 const app = document.querySelector("#app");
 const delay = ms => new Promise(res => setTimeout(res, ms));
@@ -84,6 +66,7 @@ async function getInputValue(){
     trueValue(value);
     
     createCode("whoami", "prints information about the developer");
+    createCode("fry ends", "takes you to a page of my friends");
     createOldCode("portfolio", "view the developer's programming and game development work");
     createCode("resume", "download the developer's resume");
     createCode("social", "access the developer's social media profiles");
@@ -92,6 +75,11 @@ async function getInputValue(){
     createCode("blog", "takes you to my blog site");
 
     
+  }
+    
+  else if(value === "fry ends"){
+    trueValue(value);
+    createText("<a href='https://mrashcreates.xyz/fryends' target='_blank'><i class='fab fa-github white'></i> Go to the Fry Ends</a>")
   }
   else if(value === "git link"){
     trueValue(value);
