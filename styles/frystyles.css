@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.profiles-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.profile-item {
+    text-align: center;
+    margin: 20px;
+}
+
+.profile-thumbnail {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.profile-name {
+    margin-top: 10px;
+}
