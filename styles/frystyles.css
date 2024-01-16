@@ -21,9 +21,11 @@ body {
 
 .profiles-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
     gap: 20px;
     justify-content: center;
+    max-height: calc(100vh - 40px); /* Adjusted maximum height */
+    overflow-y: auto; /* Enable vertical scroll on overflow */
     position: relative; /* Ensure z-index works within this context */
     z-index: 1; /* Ensure profiles are above the background */
 }
@@ -84,5 +86,13 @@ body {
     }
     100% {
         background-position: 0% 50%;
+    }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+    .profiles-grid {
+        grid-template-columns: 1fr;
+        max-height: none; /* Remove max-height on mobile */
     }
 }
