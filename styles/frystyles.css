@@ -24,6 +24,8 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
     justify-content: center;
+    position: relative; /* Ensure z-index works within this context */
+    z-index: 1; /* Ensure profiles are above the background */
 }
 
 .profile-item {
@@ -33,6 +35,8 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     transition: transform 0.3s ease-in-out;
+    position: relative; /* Ensure z-index works within this context */
+    z-index: 1; /* Ensure profiles are above the background */
 }
 
 .profile-item:hover {
@@ -67,7 +71,7 @@ body {
     background: linear-gradient(45deg, pink, white, black);
     background-size: 200% 200%;
     animation: gradientAnimation 10s ease infinite;
-    z-index: -1;
+    z-index: 0; /* Ensure the background is below profiles */
     filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
 }
 
