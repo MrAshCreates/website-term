@@ -1,17 +1,24 @@
+// Get the profiles carousel element
 const profilesCarousel = document.getElementById('profilesCarousel');
-let currentIndex = 0;
 
-function showProfile(index) {
-    const profiles = document.querySelectorAll('.profile-item');
-    profiles.forEach((profile, i) => {
-        profile.style.transform = `translateX(${(i - index) * 100}%)`;
+// Function to scroll the carousel to the next profile
+const scrollToNextProfile = () => {
+    profilesCarousel.scrollBy({
+        left: window.innerWidth,
+        behavior: 'smooth'
     });
-}
+};
 
-function nextProfile() {
-    currentIndex = (currentIndex + 1) % profilesCarousel.children.length;
-    showProfile(currentIndex);
-}
+// Function to scroll the carousel to the previous profile
+const scrollToPrevProfile = () => {
+    profilesCarousel.scrollBy({
+        left: -window.innerWidth,
+        behavior: 'smooth'
+    });
+};
 
-setInterval(nextProfile, 3000); // Change profile every 3 seconds
-showProfile(currentIndex);
+// Event listener for swiping left on the carousel
+profilesCarousel.addEventListener('swipeleft', scrollToNextProfile);
+
+// Event listener for swiping right on the carousel
+profilesCarousel.addEventListener('swiperight', scrollToPrevProfile);
