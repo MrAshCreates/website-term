@@ -79,7 +79,11 @@ async function getInputValue(){
     
   else if(value === "fry ends"){
     trueValue(value);
-    createText("<a href='https://mrashcreates.xyz/fryends' target='_blank'><i class='fab fa-github white'></i> Go to the Fry Ends</a>")
+    createText("<a href='https://mrashcreates.xyz/fryends/ash' target='_blank'><i class='fab fa-github white'></i> Go to my profile. </a>")
+    createText("<a href='https://mrashcreates.xyz/fryends/danny' target='_blank'><i class='fab fa-github white'></i> Go to Danny's profile. </a>")
+    createText("<a href='https://mrashcreates.xyz/fryends/bert' target='_blank'><i class='fab fa-github white'></i> Go to Bert's profile. </a>")
+    createText("<a href='https://mrashcreates.xyz/fryends/bailey' target='_blank'><i class='fab fa-github white'></i> Go to Bailey's profile. </a>")
+
   }
   else if(value === "git link"){
     trueValue(value);
