@@ -15,11 +15,12 @@ body {
     z-index: -1;
     filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
 }
+/* ... (unchanged) ... */
 
 .friend-profiles {
     text-align: center;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Increase minmax for larger screens */
     gap: 20px;
     justify-content: center;
     align-items: center;
@@ -31,12 +32,13 @@ body {
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* Ensure content doesn't overflow */
+    overflow: hidden;
+    width: 100%; /* Full width for better responsiveness */
 }
 
 .profile-photo {
-    width: 150px;
-    height: 150px;
+    width: 200px; /* Increase profile picture size */
+    height: 200px;
     border-radius: 50%;
     border: 10px solid white;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
@@ -47,11 +49,14 @@ body {
 }
 
 .profile-name {
-    font-size: 1.5em;
-    margin-top: 10px;
+    font-size: 1.8em; /* Increase font size */
+    margin-top: 15px;
     color: black;
     font-family: 'Bubblegum Sans', cursive;
 }
+
+/* ... (unchanged) ... */
+
 
 .profile-description {
     font-size: 1em;

@@ -1,0 +1,56 @@
+/* Add this content to a new file named profile-styles.css */
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.profile-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Increase max-width for larger screens */
+    width: 90%;
+    margin: 20px auto; /* Center the card */
+}
+
+#profile-pic {
+    width: 200px; /* Increase profile picture size */
+    height: 200px;
+}
+
+#name {
+    font-size: 2.5em; /* Increase font size */
+    margin-top: 15px;
+    color: black;
+    font-family: 'Bubblegum Sans', cursive;
+}
+
+#description {
+    font-size: 1.2em;
+    margin-top: 15px;
+    color: black;
+}
+
+#instagram-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+#instagram-link img {
+    width: 40px; /* Increase Instagram logo size */
+    margin-right: 10px;
+}
