@@ -17,7 +17,10 @@ body {
 }
 
 .friend-profiles {
-    display: flex;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -28,9 +31,6 @@ body {
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px; /* Adjust the max-width for your preference */
-    width: 90%; /* Adjust the width for your preference */
-    margin: 20px; /* Adjust the margin for spacing from the screen edges */
     overflow: hidden; /* Ensure content doesn't overflow */
 }
 
@@ -47,30 +47,21 @@ body {
 }
 
 .profile-name {
-    font-size: 2em;
+    font-size: 1.5em;
     margin-top: 10px;
     color: black;
     font-family: 'Bubblegum Sans', cursive;
 }
 
 .profile-description {
-    font-size: 1.2em;
+    font-size: 1em;
     margin-top: 10px;
     color: black;
 }
 
 .profile-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 15px;
     text-decoration: none;
-    color: black;
-}
-
-.profile-link img {
-    width: 30px;
-    margin-right: 5px;
+    color: inherit;
 }
 
 @keyframes gradientAnimation {
