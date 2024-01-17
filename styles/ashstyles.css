@@ -70,19 +70,23 @@ body {
 }
 
 #dev-link {
-    align-items: center;
+    display: flex;
+
     margin-top: 30px;
-    margin-left: 40px;
-    margin-right: 40px;
     text-decoration: none;
     color: black;
 
 }
 
+#dev-link a {
+    margin-right: 10px;
+}
+
 #dev-link img {
-    width: 30px;
-    margin-right: 40px;
-    margin-left: 40px;
+    width: 30px; /* Adjust the width of the icons */
+    height: 30px; /* Adjust the height of the icons */
+    display: block;
+    margin: 0 auto; /* Center the icons within the buttons */
 }
 
 @keyframes gradientAnimation {
