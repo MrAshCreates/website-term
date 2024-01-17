@@ -18,12 +18,21 @@ body {
 
 .friend-profiles {
     text-align: center;
+    padding: 20px;
+}
+
+.profiles-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: black;
+}
+
+.profiles-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 
 .profile-item {
@@ -31,8 +40,7 @@ body {
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* Ensure content doesn't overflow */
-    position: relative; /* Relative positioning for absolute child */
+    overflow: hidden;
 }
 
 .profile-photo {
@@ -41,11 +49,11 @@ body {
     border-radius: 50%;
     border: 10px solid white;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    position: absolute; /* Absolute positioning for overlay effect */
-    top: -75px; /* Adjust based on design preference */
+    position: absolute;
+    top: -75px;
     left: 50%;
     transform: translateX(-50%);
-    overflow: hidden; /* Ensure content doesn't overflow */
+    overflow: hidden;
 }
 
 .profile-photo img {
@@ -57,7 +65,7 @@ body {
 
 .profile-card {
     padding: 20px;
-    margin-top: 75px; /* Adjust based on design preference */
+    margin-top: 75px;
 }
 
 .profile-name {
@@ -68,14 +76,23 @@ body {
 }
 
 .profile-description {
-    font-size: 1em;
+    font-size: 1.2em;
     margin-top: 10px;
     color: black;
 }
 
-.profile-link {
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
     text-decoration: none;
-    color: inherit;
+    color: black;
+}
+
+.social-link img {
+    width: 30px;
+    margin-right: 5px;
 }
 
 @keyframes gradientAnimation {
