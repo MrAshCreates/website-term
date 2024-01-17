@@ -73,9 +73,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 15px;
+    margin-top: 30px;
+    margin-left: 40px;
+    margin-right: 40px;
     text-decoration: none;
     color: black;
+
 }
 
 #dev-link img {
