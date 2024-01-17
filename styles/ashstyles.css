@@ -70,9 +70,6 @@ body {
 }
 
 #dev-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-top: 30px;
     margin-left: 40px;
     margin-right: 40px;
