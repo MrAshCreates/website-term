@@ -18,28 +18,21 @@ body {
 
 .friend-profiles {
     text-align: center;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
-.profiles-carousel {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch; /* Enable momentum scrolling on iOS */
-}
-
 .profile-item {
-    flex: 0 0 auto;
     background-color: white;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 0 10px; /* Adjust margin for spacing between profiles */
-    scroll-snap-align: start;
+    overflow: hidden; /* Ensure content doesn't overflow */
+    position: relative; /* Relative positioning for absolute child */
 }
 
 .profile-photo {
@@ -48,10 +41,23 @@ body {
     border-radius: 50%;
     border: 10px solid white;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    position: absolute; /* Absolute positioning for overlay effect */
+    top: -75px; /* Adjust based on design preference */
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .profile-card {
     padding: 20px;
+    margin-top: 75px; /* Adjust based on design preference */
 }
 
 .profile-name {
@@ -86,12 +92,6 @@ body {
 
 @media (max-width: 600px) {
     .profile-item {
-        width: 80%; /* Adjusted width for mobile */
-    }
-
-    .profiles-carousel {
-        flex-direction: column;
-        align-items: center;
-        overflow-x: hidden;
+        width: 90%;
     }
 }
