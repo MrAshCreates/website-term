@@ -91,7 +91,7 @@ async function getInputValue(){
   else if(value === "blog"){
     trueValue(value);
     createText("<a href='https://asherwinstead.dev' target='_blank'><i class='fab fa-github white'></i> Taking you to my blog :)</a>")
-    await delay(500);
+    await delay(5000);
     window.open('https://asherwinstead.dev', '_blank');
   }
   else if(value === "whoami"){
