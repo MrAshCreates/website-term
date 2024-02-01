@@ -117,6 +117,8 @@ async function getInputValue(){
   else if(value === "resume"){
   trueValue(value);
   createText("Download my resume: <a href='./Resume.pdf' target='./Resume.pdf'>Download Resume</a>");
+  await delay(5000);
+  window.open('./Resume.pdf', '_blank');
   }
 
 else if (value === "contact") {
