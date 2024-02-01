@@ -12,6 +12,54 @@ app.addEventListener("keypress", async function(event){
   }
 });
 
+function handleCommandHistory() {
+  const input = document.querySelector("input");
+  const commandHistory = [""]; // Initialize with an empty command
+  let historyIndex = 0;
+
+  input.addEventListener("keydown", function(event) {
+    if (event.key === "ArrowUp") {
+      historyIndex = Math.max(0, historyIndex - 1);
+      input.value = commandHistory[historyIndex];
+      event.preventDefault();
+    } else if (event.key === "ArrowDown") {
+      historyIndex = Math.min(commandHistory.length - 1, historyIndex + 1);
+      input.value = commandHistory[historyIndex];
+      event.preventDefault();
+    }
+  });
+
+  app.addEventListener("keypress", async function(event) {
+    if (event.key === "Enter") {
+      await delay(150);
+      const command = getInputValue();
+      commandHistory.unshift(command); // Add to command history
+      historyIndex = 0;
+
+      removeInput();
+      await delay(150);
+      new_line();
+    }
+  });
+}
+
+function handleAutocompleteSuggestions() {
+  const input = document.querySelector("input");
+
+  input.addEventListener("input", function() {
+    const value = input.value.toLowerCase();
+    const suggestions = ["help", "whoami", "resume", "social", "contact", "clear", "blog"]; // Add more commands as needed
+
+    const filteredSuggestions = suggestions.filter(command => command.startsWith(value));
+
+    if (filteredSuggestions.length > 0) {
+      input.value = filteredSuggestions[0];
+    }
+  });
+}
+
+
+
 app.addEventListener("click", function(event){
   const input = document.querySelector("input");
   input.focus();
@@ -34,6 +82,9 @@ async function open_terminal(){
 
   await delay(500);
   new_line();
+  handleCommandHistory(); // Call the command history function
+  handleAutocompleteSuggestions(); // Call the autocomplete suggestions function
+
 }
 
 function new_line() {
@@ -61,6 +112,12 @@ function removeInput(){
 async function getInputValue(){
   
   const value = document.querySelector("input").value;
+  
+  if (value) {
+    trueValue(value);
+  }
+  return value;
+  
   if(value === "help"){
     trueValue(value);
     
@@ -75,7 +132,10 @@ async function getInputValue(){
 
     
   }
-    
+      
+  
+
+
   else if(value === "fry ends"){
     trueValue(value);
     createText("<a href='https://mrashcreates.xyz/fryends/ash' target='_blank'><i class='fab fa-github white'></i> Go to my profile. </a>")
