@@ -171,6 +171,17 @@ else if (value.startsWith("login ")) {
     createText("Incorrect password.");
   }
 }
+
+else if (value === "admin") {
+  trueValue(value);
+
+  if (!isLoggedIn) {
+    createText("You must be logged in to access this command.");
+    return;
+  }
+
+  createText("Welcome to the admin panel.");
+}
   else{
     falseValue(value);
     createText(`command not found: ${value}`)
