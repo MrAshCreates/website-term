@@ -162,7 +162,7 @@ else if (value.startsWith("login ")) {
     body: JSON.stringify({ password })
   });
 
-  const result = await verify.json();
+  const result = await delay(1000) || verify.json();
 
   if (result.verified) {
     createText("Login successful!");
