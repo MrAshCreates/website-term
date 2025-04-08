@@ -177,6 +177,12 @@ else if (value.startsWith("login ")) {
   }
 }
 
+function runAfter2FASuccess() {
+  isLoggedIn = true;
+  createText("Welcome, authenticated user.");
+  // Unlock secret commands or features here
+}
+
 function trueValue(value){
   
   const div = document.createElement("section");
