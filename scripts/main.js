@@ -149,6 +149,57 @@ else if (value === "contact") {
     document.querySelectorAll("p").forEach(e => e.parentNode.removeChild(e));
     document.querySelectorAll("section").forEach(e => e.parentNode.removeChild(e));
   }
+  else if (value === "login") {
+  trueValue(value);
+  
+  const email = window.prompt("Enter your email address:");
+  
+  if (!email) {
+    createText("Email is required for login.");
+    return;
+  }
+
+  // Step 1: Send Code
+  createText("Sending verification code...");
+  const send = await fetch('/send-code', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email })
+  });
+
+  const sendRes = await send.json();
+
+  if (!sendRes.success) {
+    createText("Failed to send verification code. Try again later.");
+    return;
+  }
+
+  createText("Verification code sent! Please check your email.");
+
+  // Step 2: Ask for Code
+  const code = window.prompt("Enter the 6-digit code:");
+
+  if (!code) {
+    createText("You must enter the code to proceed.");
+    return;
+  }
+
+  // Step 3: Verify Code
+  const verify = await fetch('/verify-code', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, code })
+  });
+
+  const verifyRes = await verify.json();
+
+  if (verifyRes.verified) {
+    createText("2FA verification successful! Running secure command...");
+    runAfter2FASuccess(); // your custom JS function
+  } else {
+    createText("Verification failed. Incorrect or expired code.");
+  }
+}
   else{
     falseValue(value);
     createText(`command not found: ${value}`)
